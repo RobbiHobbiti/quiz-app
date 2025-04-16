@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatelessWidget {
-  const StartScreen({super.key});
+  const StartScreen(this.startQuiz, {super.key});
+
+  final void Function() startQuiz;
 
   @override
   Widget build(context) {
@@ -23,7 +25,7 @@ class StartScreen extends StatelessWidget {
           const SizedBox(height: 30),
           OutlinedButton(
               onPressed: () {
-
+                startQuiz();
               },
               style: OutlinedButton.styleFrom(
                 foregroundColor: Colors.white
